@@ -29,3 +29,53 @@ See more info at https://academicpages.github.io/
 There is one logistical issue with a ready-to-fork template theme like academic pages that makes it a little tricky to get bug fixes and updates to the core theme. If you fork this repository, customize it, then pull again, you'll probably get merge conflicts. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch. 
 
 To support this, all changes to the underlying code appear as a closed issue with the tag 'code change' -- get the list [here](https://github.com/academicpages/academicpages.github.io/issues?q=is%3Aclosed%20is%3Aissue%20label%3A%22code%20change%22%20). Each issue thread includes a comment linking to the single commit or a diff across multiple commits, so those with forked repositories can easily identify what they need to patch.
+
+# rc3398 - My Notes
+
+Run the following CLI commands:
+```
+brew install rbenv ruby-build nodejs
+rbenv install --verbose 3.3.0
+rbenv local 3.3.0
+rbenv global 3.3.0
+rbenv install -l
+ruby -v
+
+gem install bundler
+bundle update
+rm Gemfile.lock
+bundle install
+bundle info csv
+bundle exec jekyll serve
+```
+Site: https://rc3398.github.io/
+
+## Troubleshooting
+Check that PATH contains $HOME/.rbenv/shims and $HOME/.rbenv/bin
+```
+$ env | grep PATH
+```
+
+Also check that you have the following in your ~/.bash_profile if using bash or ~/.zshenv if using zsh
+
+```
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+```
+
+See
+- https://archive.is/3TPas
+- https://github.com/collections/github-pages-examples
+
+Jekyll Minimal theme
+- https://github.com/tonydear/tonydear.github.io
+- https://stuartgeiger.com/
+- https://jekyllrb.com/docs/
+- https://mademistakes.com/work/jekyll-themes/minimal-mistakes/
+- https://github.com/mmistakes/minimal-mistakes
+- https://github.com/academicpages/academicpages.github.io
+
+Customize
+- https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll
+- https://github.com/pages-themes/minimal#customizing
+- https://pages.github.com/themes/
